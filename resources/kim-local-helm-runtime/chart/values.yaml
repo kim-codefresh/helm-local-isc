@@ -3,6 +3,10 @@ gitops-runtime:
     config:
       cors: http://local.codefresh.io,https://kim-platform.ngrok.io
       graphqlPlayground: 'true'
+  argo-events:
+    global:
+      image:
+        tag: release-1.9
   global:
     codefresh:
       url: https://kim-platform.ngrok.io
