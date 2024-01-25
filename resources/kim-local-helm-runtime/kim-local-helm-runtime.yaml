@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kim-local-helm-runtime
+  labels:
+    codefresh.io/entity: runtime
+    codefresh.io/internal: 'true'
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kim-codefresh/helm-local-isc.git
+    targetRevision: HEAD
+    path: resources/kim-local-helm-runtime/chart
+    helm:
+      releaseName: kim-local-helm-runtime
+  destination:
+    namespace: kim-local-helm-runtime
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
