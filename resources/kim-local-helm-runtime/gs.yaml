@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gs
+  labels:
+    codefresh.io/entity: 'git-source'
+    codefresh.io/internal: 'false'
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kim-codefresh/test-skip-validation_git-source.git
+    path: ./resources_test-skip-validation
+    targetRevision: main
+    directory:
+      include: '*'
+      exclude: ''
+      recurse: true
+  destination:
+    namespace: kim-local-helm-runtime
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
