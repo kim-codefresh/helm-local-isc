@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/kim-local-helm-runtime/*.yaml,runtimes/kim-local-helm-runtime/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,kim-local-helm-runtime/kim-local-helm-runtime.yaml,kim-local-helm-runtime/gs-2.yaml}
+        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/kim-local-helm-runtime/*.yaml,runtimes/kim-local-helm-runtime/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,kim-local-helm-runtime/kim-local-helm-runtime.yaml}
       recurse: true
     path: resources
     repoURL: https://github.com/kim-codefresh/helm-local-isc.git
